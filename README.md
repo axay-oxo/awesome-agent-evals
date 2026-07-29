@@ -1,23 +1,10 @@
 # Awesome Agent Evals [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
-> A curated list of tools, frameworks, benchmarks, and ideas for **evaluating AI agents** — knowing whether your agent actually works, and whether it still works tomorrow.
+> A curated, **auto-updating** list of tools, frameworks, benchmarks, and ideas for **evaluating AI agents** — knowing whether your agent actually works, and whether it still works tomorrow.
 
 Anyone can demo an agent in five minutes. The hard part is knowing it does the right thing on the inputs you didn't try, and catching the moment a prompt tweak, model bump, or new tool quietly makes it worse. Agents fail differently from plain LLM calls — they take multi-step **trajectories**, call **tools**, keep **state**, and a small early mistake compounds into a wrong final action. Evaluating them needs more than "eyeball the output."
 
-This list collects what the field actually uses.
-
----
-
-## Contents
-
-- [Start Here: How to Think About Agent Evals](#start-here-how-to-think-about-agent-evals)
-- [Eval Frameworks & Platforms](#eval-frameworks--platforms)
-- [Observability & Tracing](#observability--tracing)
-- [Guardrails & Runtime Checks](#guardrails--runtime-checks)
-- [Agent Benchmarks & Task Suites](#agent-benchmarks--task-suites)
-- [Specialized & CI Eval Tools](#specialized--ci-eval-tools)
-- [Datasets](#datasets)
-- [Contributing](#contributing)
+**🔎 Prefer to browse and filter? → [agent-evals.agentpostmortem.com](https://agent-evals.agentpostmortem.com)**
 
 ---
 
@@ -46,85 +33,101 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 
 ---
 
-## Eval Frameworks & Platforms
+<!-- LIST:START -->
+**38 tools and benchmarks**, auto-refreshed weekly. Star counts updated **2026-07-29**. Browse the filterable version at **[agent-evals.agentpostmortem.com](https://agent-evals.agentpostmortem.com)**.
 
-General-purpose toolkits for defining test cases, scoring outputs, and comparing versions.
+### At a glance: eval frameworks compared
 
-- [promptfoo](https://github.com/promptfoo/promptfoo) — Test prompts, agents, and RAG with declarative configs; red-teaming and CI/CD built in. Used by OpenAI and Anthropic.
-- [DeepEval](https://github.com/confident-ai/deepeval) — "Pytest for LLMs." A large library of metrics (faithfulness, relevancy, task completion) you assert on in unit tests.
-- [Ragas](https://github.com/explodinggradients/ragas) — Metrics focused on RAG and agent pipelines; strong on faithfulness and context quality.
-- [OpenAI Evals](https://github.com/openai/evals) — The original framework + an open registry of benchmarks for evaluating LLMs and systems.
-- [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) — A rigorous evaluation framework from the UK AI Safety Institute; first-class support for agents and tool use.
-- [Giskard](https://github.com/Giskard-AI/giskard) — Open-source testing for LLM agents; scans for vulnerabilities and quality issues.
-- [Opik](https://github.com/comet-ml/opik) — Trace, evaluate, and monitor LLM/RAG/agentic apps with automated evals and dashboards (by Comet).
-- [Langfuse](https://github.com/langfuse/langfuse) — Open-source LLM engineering platform: evals, observability, prompt management, datasets.
-- [Phoenix](https://github.com/Arize-ai/phoenix) — AI observability and evaluation, OpenTelemetry-based (by Arize).
-- [TruLens](https://github.com/truera/trulens) — Evaluation and tracking for LLM experiments and agents, built around "feedback functions."
-- [LangWatch](https://github.com/langwatch/langwatch) — A platform for LLM evaluations and AI agent testing.
-- [UpTrain](https://github.com/uptrain-ai/uptrain) — 20+ preconfigured checks plus root-cause analysis on failures.
-- [Deepchecks](https://github.com/deepchecks/deepchecks) — Continuous validation for models and data, extended to LLM apps.
-- [Evidently](https://github.com/evidentlyai/evidently) — Open-source ML/LLM observability with 100+ metrics for evaluation and monitoring.
-- [Weave](https://github.com/wandb/weave) — A lightweight toolkit for tracking and evaluating LLM apps (by Weights & Biases).
+| Tool | Stars | Host | Eval mode | LLM-judge | Language | RAG-strong |
+| --- | --- | --- | --- | --- | --- | --- |
+| [Langfuse](https://github.com/langfuse/langfuse) | 32.1k | OSS | offline + online | ✅ | Python/TS | ✅ |
+| [promptfoo](https://github.com/promptfoo/promptfoo) | 23.7k | OSS | offline + online | ✅ | TS | ✅ |
+| [Opik](https://github.com/comet-ml/opik) | 21k | OSS | offline + online | ✅ | Python/TS | ✅ |
+| [OpenAI Evals](https://github.com/openai/evals) | 19k | OSS | offline | ✅ | Python | — |
+| [DeepEval](https://github.com/confident-ai/deepeval) | 17.3k | OSS | offline | ✅ | Python | ✅ |
+| [Ragas](https://github.com/explodinggradients/ragas) | 15k | OSS | offline | ✅ | Python | ✅ |
+| [Phoenix](https://github.com/Arize-ai/phoenix) | 10.8k | OSS | offline + online | ✅ | Python | ✅ |
+| [Evidently](https://github.com/evidentlyai/evidently) | 7.8k | OSS | offline + online | ✅ | Python | — |
+| [Giskard](https://github.com/Giskard-AI/giskard) | 5.7k | OSS | offline | ✅ | Python | ✅ |
+| [Deepchecks](https://github.com/deepchecks/deepchecks) | 4k | OSS | offline | ✅ | Python | — |
+| [TruLens](https://github.com/truera/trulens) | 3.5k | OSS | offline + online | ✅ | Python | ✅ |
+| [LangWatch](https://github.com/langwatch/langwatch) | 3.4k | OSS | offline + online | ✅ | Python/TS | ✅ |
+| [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) | 2.4k | OSS | offline | ✅ | Python | — |
+| [UpTrain](https://github.com/uptrain-ai/uptrain) | 2.4k | OSS | offline + online | ✅ | Python | ✅ |
+| [Weave](https://github.com/wandb/weave) | 1.1k | OSS | offline + online | ✅ | Python/TS | — |
 
-*Commercial platforms in this space include LangSmith (LangChain) and Braintrust — worth knowing even though they're not open source.*
 
-## Observability & Tracing
+### Eval Frameworks & Platforms
 
-You can't evaluate what you can't see. These capture the full agent trajectory (prompts, tool calls, latency, cost) in production.
+- [Langfuse](https://github.com/langfuse/langfuse) `★ 32.1k` — Open-source LLM engineering platform: evals, observability, prompt management, datasets.
+- [promptfoo](https://github.com/promptfoo/promptfoo) `★ 23.7k` — Test prompts, agents, and RAG with declarative configs; red-teaming and CI/CD built in. Used by OpenAI and Anthropic.
+- [Opik](https://github.com/comet-ml/opik) `★ 21k` — Trace, evaluate, and monitor LLM/RAG/agentic apps with automated evals and dashboards.
+- [OpenAI Evals](https://github.com/openai/evals) `★ 19k` — The original framework plus an open registry of benchmarks for evaluating LLMs and systems.
+- [DeepEval](https://github.com/confident-ai/deepeval) `★ 17.3k` — "Pytest for LLMs" — a large library of metrics you assert on in unit tests.
+- [Ragas](https://github.com/explodinggradients/ragas) `★ 15k` — Metrics focused on RAG and agent pipelines; strong on faithfulness and context quality.
+- [Phoenix](https://github.com/Arize-ai/phoenix) `★ 10.8k` — AI observability and evaluation, OpenTelemetry-based (by Arize).
+- [Evidently](https://github.com/evidentlyai/evidently) `★ 7.8k` — Open-source ML/LLM observability with 100+ metrics for evaluation and monitoring.
+- [Giskard](https://github.com/Giskard-AI/giskard) `★ 5.7k` — Open-source testing for LLM agents; scans for vulnerabilities and quality issues.
+- [Deepchecks](https://github.com/deepchecks/deepchecks) `★ 4k` — Continuous validation for models and data, extended to LLM apps.
+- [TruLens](https://github.com/truera/trulens) `★ 3.5k` — Evaluation and tracking for LLM experiments and agents, built around feedback functions.
+- [LangWatch](https://github.com/langwatch/langwatch) `★ 3.4k` — A platform for LLM evaluations and AI agent testing.
+- [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) `★ 2.4k` — A rigorous evaluation framework from the UK AI Safety Institute; first-class agent and tool-use support.
+- [UpTrain](https://github.com/uptrain-ai/uptrain) `★ 2.4k` — 20+ preconfigured checks plus root-cause analysis on failures.
+- [Weave](https://github.com/wandb/weave) `★ 1.1k` — A lightweight toolkit for tracking and evaluating LLM apps (by Weights & Biases).
 
-- [Helicone](https://github.com/Helicone/helicone) — Open-source LLM observability; one line of code to monitor, evaluate, and experiment.
-- [OpenLLMetry](https://github.com/traceloop/openllmetry) — Open-source GenAI observability built on OpenTelemetry.
-- [Langtrace](https://github.com/Scale3-Labs/langtrace) — OpenTelemetry-based end-to-end tracing, evals, and metrics for LLM apps and vector DBs.
-- [AgentOps](https://github.com/AgentOps-AI/agentops) — Agent monitoring, cost tracking, and benchmarking; integrates with CrewAI, OpenAI Agents SDK, LangChain, AutoGen, and more.
+### Observability & Tracing
 
-## Guardrails & Runtime Checks
+- [OpenLLMetry](https://github.com/traceloop/openllmetry) `★ 7.3k` — Open-source GenAI observability built on OpenTelemetry.
+- [Helicone](https://github.com/Helicone/helicone) `★ 6k` — Open-source LLM observability; one line of code to monitor, evaluate, and experiment.
+- [AgentOps](https://github.com/AgentOps-AI/agentops) `★ 5.7k` — Agent monitoring, cost tracking, and benchmarking; integrates with CrewAI, OpenAI Agents SDK, LangChain, AutoGen, and more.
+- [Langtrace](https://github.com/Scale3-Labs/langtrace) `★ 1.2k` — OpenTelemetry-based end-to-end tracing, evals, and metrics for LLM apps and vector DBs.
 
-Online evaluation: catch bad inputs/outputs *while the agent runs*.
+### Guardrails & Runtime Checks
 
-- [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) — Programmable guardrails for LLM conversational systems (by NVIDIA).
-- [Guardrails AI](https://github.com/guardrails-ai/guardrails) — Add input/output validators and structured guarantees to LLMs.
-- [LLM Guard](https://github.com/protectai/llm-guard) — A security toolkit for LLM interactions (PII, toxicity, injection).
-- [Rebuff](https://github.com/protectai/rebuff) — A self-hardening prompt-injection detector.
+- [Guardrails AI](https://github.com/guardrails-ai/guardrails) `★ 7.2k` — Add input/output validators and structured guarantees to LLMs.
+- [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) `★ 6.8k` — Programmable guardrails for LLM conversational systems (by NVIDIA).
+- [LLM Guard](https://github.com/protectai/llm-guard) `★ 3.2k` — A security toolkit for LLM interactions (PII, toxicity, injection).
+- [Rebuff](https://github.com/protectai/rebuff) `★ 1.5k` — A self-hardening prompt-injection detector.
 
-## Agent Benchmarks & Task Suites
+### Agent Benchmarks & Task Suites
 
-Standardized environments to measure agent capability on realistic tasks.
+- [ToolBench](https://github.com/OpenBMB/ToolBench) `★ 5.7k` — Training, serving, and evaluating LLMs for tool use (ICLR'24 spotlight).
+- [SWE-bench](https://github.com/princeton-nlp/SWE-bench) `★ 5.5k` — Can agents resolve real GitHub issues? The de facto coding-agent benchmark.
+- [AgentBench](https://github.com/THUDM/AgentBench) `★ 3.6k` — A comprehensive benchmark evaluating LLMs as agents across 8 environments (ICLR'24).
+- [OSWorld](https://github.com/xlang-ai/OSWorld) `★ 3k` — Benchmarking multimodal agents on open-ended tasks in real computer environments (NeurIPS 2024).
+- [MLE-bench](https://github.com/openai/mle-bench) `★ 1.7k` — How well do agents perform at machine-learning engineering? (by OpenAI).
+- [WebArena](https://github.com/web-arena-x/webarena) `★ 1.6k` — A realistic, self-hostable web environment for autonomous agents.
+- [τ-bench (tau-bench)](https://github.com/sierra-research/tau-bench) `★ 1.4k` — Tool-agent-user interaction in realistic customer-service settings (by Sierra).
+- [BrowserGym](https://github.com/ServiceNow/BrowserGym) `★ 1.3k` — A Gym environment for web-automation agents (by ServiceNow).
+- [AndroidWorld](https://github.com/google-research/android_world) `★ 835` — An environment and benchmark for autonomous mobile agents (by Google Research).
+- [VisualWebArena](https://github.com/web-arena-x/visualwebarena) `★ 484` — WebArena extended to multimodal, visually-grounded web tasks.
 
-- [SWE-bench](https://github.com/princeton-nlp/SWE-bench) — Can agents resolve real GitHub issues? The de facto coding-agent benchmark.
-- [τ-bench (tau-bench)](https://github.com/sierra-research/tau-bench) — Tool-agent-user interaction in realistic customer-service settings (by Sierra).
-- [AgentBench](https://github.com/THUDM/AgentBench) — A comprehensive benchmark evaluating LLMs as agents across 8 environments (ICLR'24).
-- [WebArena](https://github.com/web-arena-x/webarena) — A realistic, self-hostable web environment for autonomous agents.
-- [VisualWebArena](https://github.com/web-arena-x/visualwebarena) — WebArena extended to multimodal, visually-grounded web tasks.
-- [BrowserGym](https://github.com/ServiceNow/BrowserGym) — A Gym environment for web-automation agents (by ServiceNow).
-- [OSWorld](https://github.com/xlang-ai/OSWorld) — Benchmarking multimodal agents on open-ended tasks in real computer environments (NeurIPS 2024).
-- [AndroidWorld](https://github.com/google-research/android_world) — An environment and benchmark for autonomous mobile agents (by Google Research).
-- [MLE-bench](https://github.com/openai/mle-bench) — How well do agents perform at machine-learning engineering? (by OpenAI).
-- [ToolBench](https://github.com/OpenBMB/ToolBench) — Training, serving, and evaluating LLMs for tool use (ICLR'24 spotlight).
+### Specialized & CI Eval Tools
 
-## Specialized & CI Eval Tools
+- [EvalGate](https://github.com/royalpinto007/evalgate) `★ 0` — Prompt and agent regression CI as a GitHub Action; the build fails when your prompt gets dumber, with PR delta comments.
+- [VoiceEval](https://github.com/royalpinto007/Voiceeval) `★ 0` — Evaluation for voice agents; catches what text evals miss: mis-hearing, missing confirmation, latency, barge-in.
+- [Agentrace](https://github.com/royalpinto007/Agentrace) `★ 0` — Observability for Claude Code subagents; reads session transcripts and flags results you shouldn't trust.
+- [AnswerProof](https://github.com/royalpinto007/answerproof) `★ 0` — Verifiable, tamper-evident receipts for RAG answers (Merkle inclusion proofs + Ed25519 signatures).
 
-Narrower tools for specific agent surfaces — regression gates, voice, subagents, provenance.
+### Datasets
 
-- [EvalGate](https://github.com/royalpinto007/evalgate) — Prompt and agent regression CI as a GitHub Action; the build fails when your prompt gets dumber, with PR delta comments.
-- [VoiceEval](https://github.com/royalpinto007/Voiceeval) — Evaluation for voice agents; catches what text evals miss: mis-hearing, missing confirmation, latency, barge-in.
-- [Agentrace](https://github.com/royalpinto007/Agentrace) — Observability for Claude Code subagents; reads session transcripts and flags results you shouldn't trust.
-- [AnswerProof](https://github.com/royalpinto007/answerproof) — Verifiable, tamper-evident receipts for RAG answers (Merkle inclusion proofs + Ed25519 signatures).
+- [LLM Datasets](https://github.com/mlabonne/llm-datasets) `★ 4.7k` — A curated list of datasets and tools for post-training and evaluation.
 
-## Datasets
-
-- [LLM Datasets](https://github.com/mlabonne/llm-datasets) — A curated list of datasets and tools for post-training and evaluation.
+<!-- LIST:END -->
 
 ---
 
 ## Contributing
 
-Contributions are very welcome — this list is only as good as the community keeps it. Open a PR to add a tool, benchmark, or resource. Please:
+Contributions are very welcome — this list is only as good as the community keeps it. Edit [`data/tools.json`](data/tools.json) and open a PR (the README table and the site are generated from it — don't edit them by hand). Please:
 
-- Keep one entry per line: `[Name](link) — one honest sentence on what it does and who it's for.`
-- Put it in the section it best fits; add a new section if none fits.
+- One object per tool: `name`, `url`, `category`, a one-honest-sentence `desc`, and `repo` (`owner/name`) if it's on GitHub so stars auto-populate.
+- Categories: `framework`, `observability`, `guardrails`, `benchmark`, `specialized`, `dataset`.
 - No dead links, no pure marketing, no paid placements. Prefer things you've actually used.
 
 New to open source? Adding one good entry here is a perfectly good first PR.
+
+> Star counts refresh automatically every week via GitHub Actions — no manual upkeep.
 
 ## License
 
