@@ -117,6 +117,10 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 
 ---
 
+## Related
+
+- [awesome-llm-guardrails](https://github.com/royalpinto007/awesome-llm-guardrails) — the guardrails counterpart: stop your agent from leaking data, getting jailbroken, or emitting malformed output.
+
 ## Contributing
 
 Contributions are very welcome — this list is only as good as the community keeps it. Edit [`data/tools.json`](data/tools.json) and open a PR (the README table and the site are generated from it — don't edit them by hand). Please:
