@@ -34,19 +34,19 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 ---
 
 <!-- LIST:START -->
-**38 tools and benchmarks**, auto-refreshed weekly. Star counts updated **2026-08-17**. Browse the filterable version at **[agent-evals.agentpostmortem.com](https://agent-evals.agentpostmortem.com)**.
+**38 tools and benchmarks**, auto-refreshed weekly. Star counts updated **2026-08-24**. Browse the filterable version at **[agent-evals.agentpostmortem.com](https://agent-evals.agentpostmortem.com)**.
 
 ### At a glance: eval frameworks compared
 
 | Tool | Stars | Host | Eval mode | LLM-judge | Language | RAG-strong |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Langfuse](https://github.com/langfuse/langfuse) | 33.2k | OSS | offline + online | ✅ | Python/TS | ✅ |
-| [promptfoo](https://github.com/promptfoo/promptfoo) | 24.3k | OSS | offline + online | ✅ | TS | ✅ |
-| [Opik](https://github.com/comet-ml/opik) | 21.4k | OSS | offline + online | ✅ | Python/TS | ✅ |
+| [Langfuse](https://github.com/langfuse/langfuse) | 33.6k | OSS | offline + online | ✅ | Python/TS | ✅ |
+| [promptfoo](https://github.com/promptfoo/promptfoo) | 24.5k | OSS | offline + online | ✅ | TS | ✅ |
+| [Opik](https://github.com/comet-ml/opik) | 21.6k | OSS | offline + online | ✅ | Python/TS | ✅ |
 | [OpenAI Evals](https://github.com/openai/evals) | 19.2k | OSS | offline | ✅ | Python | — |
-| [DeepEval](https://github.com/confident-ai/deepeval) | 17.6k | OSS | offline | ✅ | Python | ✅ |
-| [Ragas](https://github.com/explodinggradients/ragas) | 15.3k | OSS | offline | ✅ | Python | ✅ |
-| [Phoenix](https://github.com/Arize-ai/phoenix) | 11.1k | OSS | offline + online | ✅ | Python | ✅ |
+| [DeepEval](https://github.com/confident-ai/deepeval) | 17.8k | OSS | offline | ✅ | Python | ✅ |
+| [Ragas](https://github.com/explodinggradients/ragas) | 15.4k | OSS | offline | ✅ | Python | ✅ |
+| [Phoenix](https://github.com/Arize-ai/phoenix) | 11.2k | OSS | offline + online | ✅ | Python | ✅ |
 | [Evidently](https://github.com/evidentlyai/evidently) | 7.8k | OSS | offline + online | ✅ | Python | — |
 | [Giskard](https://github.com/Giskard-AI/giskard) | 5.8k | OSS | offline | ✅ | Python | ✅ |
 | [Deepchecks](https://github.com/deepchecks/deepchecks) | 4k | OSS | offline | ✅ | Python | — |
@@ -59,13 +59,13 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 
 ### Eval Frameworks & Platforms
 
-- [Langfuse](https://github.com/langfuse/langfuse) `★ 33.2k` — Open-source LLM engineering platform: evals, observability, prompt management, datasets.
-- [promptfoo](https://github.com/promptfoo/promptfoo) `★ 24.3k` — Test prompts, agents, and RAG with declarative configs; red-teaming and CI/CD built in. Used by OpenAI and Anthropic.
-- [Opik](https://github.com/comet-ml/opik) `★ 21.4k` — Trace, evaluate, and monitor LLM/RAG/agentic apps with automated evals and dashboards.
+- [Langfuse](https://github.com/langfuse/langfuse) `★ 33.6k` — Open-source LLM engineering platform: evals, observability, prompt management, datasets.
+- [promptfoo](https://github.com/promptfoo/promptfoo) `★ 24.5k` — Test prompts, agents, and RAG with declarative configs; red-teaming and CI/CD built in. Used by OpenAI and Anthropic.
+- [Opik](https://github.com/comet-ml/opik) `★ 21.6k` — Trace, evaluate, and monitor LLM/RAG/agentic apps with automated evals and dashboards.
 - [OpenAI Evals](https://github.com/openai/evals) `★ 19.2k` — The original framework plus an open registry of benchmarks for evaluating LLMs and systems.
-- [DeepEval](https://github.com/confident-ai/deepeval) `★ 17.6k` — "Pytest for LLMs" — a large library of metrics you assert on in unit tests.
-- [Ragas](https://github.com/explodinggradients/ragas) `★ 15.3k` — Metrics focused on RAG and agent pipelines; strong on faithfulness and context quality.
-- [Phoenix](https://github.com/Arize-ai/phoenix) `★ 11.1k` — AI observability and evaluation, OpenTelemetry-based (by Arize).
+- [DeepEval](https://github.com/confident-ai/deepeval) `★ 17.8k` — "Pytest for LLMs" — a large library of metrics you assert on in unit tests.
+- [Ragas](https://github.com/explodinggradients/ragas) `★ 15.4k` — Metrics focused on RAG and agent pipelines; strong on faithfulness and context quality.
+- [Phoenix](https://github.com/Arize-ai/phoenix) `★ 11.2k` — AI observability and evaluation, OpenTelemetry-based (by Arize).
 - [Evidently](https://github.com/evidentlyai/evidently) `★ 7.8k` — Open-source ML/LLM observability with 100+ metrics for evaluation and monitoring.
 - [Giskard](https://github.com/Giskard-AI/giskard) `★ 5.8k` — Open-source testing for LLM agents; scans for vulnerabilities and quality issues.
 - [Deepchecks](https://github.com/deepchecks/deepchecks) `★ 4k` — Continuous validation for models and data, extended to LLM apps.
@@ -99,7 +99,7 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 - [WebArena](https://github.com/web-arena-x/webarena) `★ 1.6k` — A realistic, self-hostable web environment for autonomous agents.
 - [τ-bench (tau-bench)](https://github.com/sierra-research/tau-bench) `★ 1.4k` — Tool-agent-user interaction in realistic customer-service settings (by Sierra).
 - [BrowserGym](https://github.com/ServiceNow/BrowserGym) `★ 1.3k` — A Gym environment for web-automation agents (by ServiceNow).
-- [AndroidWorld](https://github.com/google-research/android_world) `★ 848` — An environment and benchmark for autonomous mobile agents (by Google Research).
+- [AndroidWorld](https://github.com/google-research/android_world) `★ 855` — An environment and benchmark for autonomous mobile agents (by Google Research).
 - [VisualWebArena](https://github.com/web-arena-x/visualwebarena) `★ 485` — WebArena extended to multimodal, visually-grounded web tasks.
 
 ### Specialized & CI Eval Tools
@@ -111,7 +111,7 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 
 ### Datasets
 
-- [LLM Datasets](https://github.com/mlabonne/llm-datasets) `★ 4.7k` — A curated list of datasets and tools for post-training and evaluation.
+- [LLM Datasets](https://github.com/mlabonne/llm-datasets) `★ 4.8k` — A curated list of datasets and tools for post-training and evaluation.
 
 <!-- LIST:END -->
 
