@@ -40,6 +40,7 @@
   { "name": "VoiceEval", "repo": "royalpinto007/Voiceeval", "url": "https://github.com/royalpinto007/Voiceeval", "category": "specialized", "desc": "Evaluation for voice agents; catches what text evals miss: mis-hearing, missing confirmation, latency, barge-in." },
   { "name": "Agentrace", "repo": "royalpinto007/Agentrace", "url": "https://github.com/royalpinto007/Agentrace", "category": "specialized", "desc": "Observability for Claude Code subagents; reads session transcripts and flags results you shouldn't trust." },
   { "name": "AnswerProof", "repo": "royalpinto007/answerproof", "url": "https://github.com/royalpinto007/answerproof", "category": "specialized", "desc": "Verifiable, tamper-evident receipts for RAG answers (Merkle inclusion proofs + Ed25519 signatures)." },
+  { "name": "Agent QA", "repo": "vostride/agent-qa", "url": "https://github.com/vostride/agent-qa", "category": "specialized", "desc": "Application-level regression testing for software produced by coding agents, with persistent web/mobile tests and retained failure evidence; it does not score agent trajectories and is source-available under FSL-1.1-ALv2, converting to Apache-2.0 two years after each release." },
 
   { "name": "LLM Datasets", "repo": "mlabonne/llm-datasets", "url": "https://github.com/mlabonne/llm-datasets", "category": "dataset", "desc": "A curated list of datasets and tools for post-training and evaluation." }
 ]
