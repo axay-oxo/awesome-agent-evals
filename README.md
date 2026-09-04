@@ -34,7 +34,7 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 ---
 
 <!-- LIST:START -->
-**39 tools and benchmarks**, auto-refreshed weekly. Star counts updated **2026-08-31**. Browse the filterable version at **[agent-evals.agentpostmortem.com](https://agent-evals.agentpostmortem.com)**.
+**40 tools and benchmarks**, auto-refreshed weekly. Star counts updated **2026-08-31**. Browse the filterable version at **[agent-evals.agentpostmortem.com](https://agent-evals.agentpostmortem.com)**.
 
 ### At a glance: eval frameworks compared
 
@@ -109,6 +109,7 @@ Task success rate, tool-call accuracy, faithfulness/groundedness (for RAG), safe
 - [VoiceEval](https://github.com/royalpinto007/Voiceeval) `★ 0` — Evaluation for voice agents; catches what text evals miss: mis-hearing, missing confirmation, latency, barge-in.
 - [Agentrace](https://github.com/royalpinto007/Agentrace) `★ 0` — Observability for Claude Code subagents; reads session transcripts and flags results you shouldn't trust.
 - [AnswerProof](https://github.com/royalpinto007/answerproof) `★ 0` — Verifiable, tamper-evident receipts for RAG answers (Merkle inclusion proofs + Ed25519 signatures).
+- [Agent QA](https://github.com/vostride/agent-qa) — Application-level regression testing for software produced by coding agents, with persistent web/mobile tests and retained failure evidence; it does not score agent trajectories and is source-available under FSL-1.1-ALv2, converting to Apache-2.0 two years after each release.
 
 ### Datasets
 
